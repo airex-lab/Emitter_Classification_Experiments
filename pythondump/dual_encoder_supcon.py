@@ -203,19 +203,19 @@ def main():
 
     try:
         # ── Load data once per process
-        df1 = pd.read_excel('data/set1.xls')
+        df1 = pd.read_excel('../dataset/set1.xls')
         df1 = df1[df1['Status'] != 'DELETE_EMITTER'][COLS]
 
-        df2 = pd.read_excel('data/set2.xls')
+        df2 = pd.read_excel('../dataset/set2.xls')
         df2 = df2[df2['Status'] != 'DELETE_EMITTER'][COLS]
 
-        df3 = pd.read_excel('data/set3.xlsx')
+        df3 = pd.read_excel('../dataset/set3.xlsx')
         df3 = df3[df3['Status'] != 'DELETE_EMITTER'][COLS]
 
-        df5 = pd.read_excel('data/set5.xlsx')
+        df5 = pd.read_excel('../dataset/set5.xlsx')
         df5 = df5[df5['Status'] != 'DELETE_EMITTER'][COLS]
 
-        df6 = pd.read_excel('data/set6.xlsx')
+        df6 = pd.read_excel('../dataset/set6.xlsx')
         df6 = df6[df6['Status'] != 'DELETE_EMITTER'][COLS]
 
         train_df = pd.concat([df1, df2, df5, df6], ignore_index=True)

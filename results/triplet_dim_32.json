@@ -1,0 +1,8 @@
+{
+  "embedding_dim": 32,
+  "test_acc": 0.6276123087049531,
+  "final_loss": 0.013848369947831648,
+  "margin": 1.0,
+  "model_type": "residual",
+  "loss_type": "triplet"
+}

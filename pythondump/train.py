@@ -136,25 +136,25 @@ def main():
     suppress_non_main_print(rank)
 
     # ── Load data once per process
-    df1 = pd.read_excel('set1.xls')
+    df1 = pd.read_excel('/home/vishesh/github/Emitter_Classification_Experiments/dataset/set1.xls')
     df1 = df1[df1['Status'] != 'DELETE_EMITTER'][COLS]
     
-    df2 = pd.read_excel('set2.xls')
+    df2 = pd.read_excel('/home/vishesh/github/Emitter_Classification_Experiments/dataset/set2.xls')
     df2 = df2[df2['Status'] != 'DELETE_EMITTER'][COLS]
     
-    df3 = pd.read_excel('set3.xlsx')
+    df3 = pd.read_excel('/home/vishesh/github/Emitter_Classification_Experiments/dataset/set3.xlsx')
     df3 = df3[df3['Status'] != 'DELETE_EMITTER'][COLS]
     
-    df5 = pd.read_excel('set5.xlsx')
+    df5 = pd.read_excel('/home/vishesh/github/Emitter_Classification_Experiments/dataset/set5.xlsx')
     df5 = df5[df5['Status'] != 'DELETE_EMITTER'][COLS]
     
-    df6 = pd.read_excel('set6.xlsx')
+    df6 = pd.read_excel('/home/vishesh/github/Emitter_Classification_Experiments/dataset/set6.xlsx')
     df6 = df6[df6['Status'] != 'DELETE_EMITTER'][COLS]
 
-    raw_df=pd.read_csv()
+    # Use set3 as test data since test_set.csv doesn't exist
+    test_df = df3
 
     train_df = pd.concat([df1, df2, df5, df6,df3], ignore_index=True)
-    test_df  = raw_df
 
     x_train, y_train, _, scaler = preprocess(train_df)
     x_test,  y_test, _, _       = preprocess(test_df, scaler)
